@@ -1,0 +1,30 @@
+{
+  "name": "react-radial-list",
+  "version": "1.0.0",
+  "description": "React component that lays out a list of children in a radial pattern.",
+  "main": "source/client.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/everydayhero/react-radial-list.git"
+  },
+  "keywords": [
+    "react",
+    "radial",
+    "component"
+  ],
+  "author": "@howlingeverett",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/everydayhero/react-radial-list/issues"
+  },
+  "homepage": "https://github.com/everydayhero/react-radial-list#readme",
+  "devDependencies": {
+    "ava": "^0.16.0",
+    "boiler-room-builder": "^1.0.0-18",
+    "cxs": "^1.0.1",
+    "enzyme": "^2.4.1"
+  }
+}
