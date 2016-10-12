@@ -2,13 +2,12 @@
   "name": "react-radial-list",
   "version": "1.0.0",
   "description": "React component that lays out a list of children in a radial pattern.",
-  "main": "source/client.js",
+  "main": "dist/module/RadialList/index.js",
   "scripts": {
     "start": "brb serve",
     "build": "brb build",
+    "prepublish": "brb build && babel source/components --out-dir dist/module",
     "lint": "brb lint",
-    "lint:fix": "brb lint --fix",
-    "lint:watch": "brb lint --watch",
     "test": "ava",
     "test:watch": "ava --watch"
   },
