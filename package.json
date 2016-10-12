@@ -29,6 +29,7 @@
   "devDependencies": {
     "ava": "^0.16.0",
     "babel-polyfill": "^6.16.0",
+    "babel-preset-latest": "^6.16.0",
     "boiler-room-builder": "^1.0.0-18",
     "cxs": "^1.0.1",
     "enzyme": "^2.4.1",
@@ -37,8 +38,7 @@
   },
   "babel": {
     "presets": [
-      "es2015",
-      "stage-0",
+      "latest",
       "react"
     ]
   },

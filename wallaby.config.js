@@ -13,7 +13,7 @@ module.exports = wallaby => ({
 
   compilers: {
     '**/*.js': wallaby.compilers.babel({
-      presets: ['es2015', 'stage-0', 'react'],
+      presets: ['latest', 'react'],
       plugins: [
         require('babel-plugin-espower/create')(
           require('babel-core'), {
