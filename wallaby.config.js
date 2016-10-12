@@ -1,6 +1,7 @@
 module.exports = wallaby => ({
   files: [
     'source/**/*.js',
+    'test/**/*.js',
     { pattern: 'source/**/__tests__/*.js', ignore: true }
   ],
 

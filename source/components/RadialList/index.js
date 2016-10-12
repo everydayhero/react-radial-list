@@ -16,9 +16,9 @@ const BASE_STYLES = {
 
 const RadialList = ({
   items,
-  offsetDegrees,
-  listStyles,
-  itemStyles
+  offsetDegrees = -90, // Positions the first item at 12 o'clock
+  listStyles = {},
+  itemStyles = {}
 }) => {
   const styles = Object.assign({}, BASE_STYLES, listStyles)
 
@@ -43,12 +43,6 @@ RadialList.propTypes = {
   offsetDegrees: React.PropTypes.number,
   listStyles: React.PropTypes.object,
   itemStyles: React.PropTypes.object
-}
-
-RadialList.defaultProps = {
-  offsetDegrees: -90, // Positions the first item at 12 o'clock
-  listStyles: {},
-  itemStyles: {}
 }
 
 export default RadialList
