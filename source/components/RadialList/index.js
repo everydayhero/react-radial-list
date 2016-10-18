@@ -13,13 +13,13 @@ const RadialList = ({
   itemStyles = {},
   collapsed = false
 }) => {
-  const listStyles = css(styles.list, {
+  const liStyles = css(styles.list, {
     width: diameter,
     height: diameter
   }, listStyles)
 
   return (
-    <ul className={`radial-list ${listStyles}`}>
+    <ul className={`radial-list ${liStyles}`}>
       {items.map((item, i) => (
         <RadialListItem
           key={i}
