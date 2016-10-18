@@ -38,13 +38,15 @@ const RadialList = ({
 
 RadialList.propTypes = {
   items: React.PropTypes.arrayOf(React.PropTypes.node).isRequired,
+  selectedItemIndex: React.PropTypes.number,
   diameter: React.PropTypes.oneOf([
     React.PropTypes.number,
     React.PropTypes.string
   ]),
   offsetDegrees: React.PropTypes.number,
   listStyles: React.PropTypes.object,
-  itemStyles: React.PropTypes.object
+  itemStyles: React.PropTypes.object,
+  collapsed: React.PropTypes.bool
 }
 
 export default RadialList
