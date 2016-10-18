@@ -19,11 +19,11 @@ const RadialListItem = ({
     itemStyles,
     { transform: `rotate(${rotation}deg)` }
   )
-  const spanStyles = css(styles.span, { transform: `rotate(${-rotation}deg)` })
+  const labelStyles = css(styles.label, { transform: `rotate(${rotation * -1}deg)` })
 
   return (
     <li className={`radial-list-item ${listItemStyles}`}>
-      <span className={`radial-list-item-content ${spanStyles}`}>
+      <span className={`radial-list-item-content ${labelStyles}`}>
         {item}
       </span>
     </li>
