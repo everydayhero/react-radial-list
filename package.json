@@ -2,11 +2,11 @@
   "name": "react-radial-list",
   "version": "1.1.2",
   "description": "React component that lays out a list of children in a radial pattern.",
-  "main": "dist/module/RadialList/index.js",
+  "main": "dist/modular/components/RadialList/index.js",
   "scripts": {
     "start": "brb serve",
     "build": "brb build",
-    "prepublish": "brb build && babel source/components --out-dir dist/module",
+    "prepublish": "brb build && babel source --out-dir dist/modular",
     "lint": "brb lint",
     "test": "ava",
     "test:watch": "ava --watch"
@@ -28,8 +28,12 @@
   "homepage": "https://github.com/everydayhero/react-radial-list#readme",
   "devDependencies": {
     "ava": "^0.16.0",
+    "babel-cli": "^6.16.0",
+    "babel-core": "^6.17.0",
     "babel-polyfill": "^6.16.0",
     "babel-preset-latest": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
     "boiler-room-builder": "^1.0.0-18",
     "cxs": "^1.0.1",
     "enzyme": "^2.4.1",
