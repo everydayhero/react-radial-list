@@ -1,29 +1,25 @@
 import React from 'react'
-import cxs from 'cxs'
 
+import styles from './styles'
+import css from '../../css'
 import RadialListItem from '../RadialListItem'
-
-const BASE_STYLES = {
-  display: 'block',
-  position: 'relative',
-  margin: 0,
-  padding: 0
-}
 
 const RadialList = ({
   items,
+  selectedItemIndex,
   diameter = 240, // By default renders around circle with a diameter of 240px
   offsetDegrees = -90, // Positions the first item at 12 o'clock
   listStyles = {},
-  itemStyles = {}
+  itemStyles = {},
+  collapsed = false
 }) => {
-  const styles = Object.assign({}, BASE_STYLES, {
+  const listStyles = css(styles.list, {
     width: diameter,
     height: diameter
   }, listStyles)
 
   return (
-    <ul className={`radial-list ${cxs(styles)}`}>
+    <ul className={`radial-list ${listStyles}`}>
       {items.map((item, i) => (
         <RadialListItem
           key={i}
@@ -32,6 +28,8 @@ const RadialList = ({
           count={items.length}
           offsetDegrees={offsetDegrees}
           itemStyles={itemStyles}
+          selected={i === selectedItemIndex}
+          collapsed={collapsed}
         />
       ))}
     </ul>

@@ -1,46 +1,29 @@
 import React from 'react'
-import cxs from 'cxs'
 
-const BASE_STYLES = {
-  display: 'block',
-  zIndex: 2,
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  width: '80%',
-  height: 20,
-  margin: 0,
-  padding: 0,
-  listStyle: 'none',
-  transformOrigin: '0% 50%'
-}
-
-const SPAN_STYLES = {
-  display: 'block',
-  position: 'absolute',
-  top: 0,
-  width: '100%',
-  textAlign: 'center'
-}
+import css from '../../css'
+import styles from './styles'
 
 const RadialListItem = ({
   item,
   index,
   count,
-  offsetDegrees,
-  itemStyles
+  offsetDegrees = -90,
+  itemStyles = {},
+  selected = false,
+  collapsed = false
 }) => {
-  const rotation = offsetDegrees + (360 / count * index)
-  const listItemStyles = Object.assign({}, BASE_STYLES, itemStyles, {
-    transform: `rotate(${rotation}deg)`
-  })
-  const spanStyles = Object.assign({}, SPAN_STYLES, {
-    transform: `rotate(${-rotation}deg)`
-  })
+  const rotation = collapsed ? -90 : (offsetDegrees + (360 / count * index))
+  const listItemStyles = css(
+    styles.list,
+    (selected && styles.selected),
+    itemStyles,
+    { transform: `rotate(${rotation}deg)` }
+  )
+  const spanStyles = css(styles.span, { transform: `rotate(${-rotation}deg)` })
 
   return (
-    <li className={`radial-list-item ${cxs(listItemStyles)}`}>
-      <span className={`radial-list-item-content ${cxs(spanStyles)}`}>
+    <li className={`radial-list-item ${listItemStyles}`}>
+      <span className={`radial-list-item-content ${spanStyles}`}>
         {item}
       </span>
     </li>
@@ -52,12 +35,9 @@ RadialListItem.propTypes = {
   index: React.PropTypes.number.isRequired,
   count: React.PropTypes.number.isRequired,
   itemStyles: React.PropTypes.object,
-  offsetDegrees: React.PropTypes.number
-}
-
-RadialListItem.defaultProps = {
-  itemStyles: {},
-  offsetDegrees: 0
+  offsetDegrees: React.PropTypes.number,
+  selected: React.PropTypes.bool,
+  collapsed: React.PropTypes.bool
 }
 
 export default RadialListItem
