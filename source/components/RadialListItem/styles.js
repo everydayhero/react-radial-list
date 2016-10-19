@@ -6,7 +6,7 @@ export default {
     position: 'absolute',
     top: '50%',
     left: '50%',
-    width: '80%',
+    width: '50%',
     height: 20,
     margin: 0,
     padding: 0,
@@ -17,8 +17,8 @@ export default {
   label: {
     display: 'block',
     position: 'absolute',
-    top: 0,
-    width: '100%',
+    top: '50%',
+    right: 0,
     textAlign: 'center',
     zIndex: 1,
     transition

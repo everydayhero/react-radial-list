@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/everydayhero/react-radial-list#readme",
   "dependencies": {
-    "cxs": "lukebrooker/cxs#allow-gh-npm-install",
+    "cxsync": "^1.0.1",
     "inline-style-prefixer": "^2.0.4"
   },
   "devDependencies": {
