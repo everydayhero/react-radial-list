@@ -1,25 +1,30 @@
 import React from 'react'
 import css from 'cxsync'
 
+import { xOffset, yOffset } from '../../lib/utils'
 import styles from './styles'
 
+const NORTH = -90
+
 const RadialListItem = ({
+  radius,
   item,
   index,
   count,
+  arc = 360,
   offsetDegrees = -90,
   itemStyles = {},
   selected = false,
   collapsed = false
 }) => {
-  const rotation = collapsed ? -90 : (offsetDegrees + (360 / count * index))
+  const rotation = collapsed ? NORTH : (offsetDegrees + NORTH + (arc / count * index))
   const listItemStyles = css(
     styles.list,
     (selected && styles.selected),
     itemStyles,
     { transform: `rotate(${rotation}deg)` }
   )
-  const labelStyles = css(styles.label, { transform: `rotate(${rotation * -1}deg) translateY(-50%)` })
+  const labelStyles = css(styles.label, { transform: `rotate(${rotation * -1}deg) translate(${xOffset(radius, rotation)}, ${yOffset(radius, rotation)})` })
 
   return (
     <li className={`radial-list-item ${listItemStyles}`}>
