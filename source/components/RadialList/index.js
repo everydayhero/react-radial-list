@@ -1,7 +1,7 @@
 import React from 'react'
+import css from 'cxsync'
 
 import styles from './styles'
-import css from '../../css'
 import RadialListItem from '../RadialListItem'
 
 const RadialList = ({
