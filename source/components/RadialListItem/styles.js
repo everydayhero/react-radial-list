@@ -1,4 +1,4 @@
-const transition = 'transform 0.2s ease-in-out'
+const transition = 'all 500ms ease-in-out'
 
 export default {
   list: {
@@ -6,8 +6,6 @@ export default {
     position: 'absolute',
     top: '50%',
     left: '50%',
-    width: '50%',
-    height: 20,
     margin: 0,
     padding: 0,
     listStyle: 'none',

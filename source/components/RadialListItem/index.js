@@ -12,17 +12,19 @@ const RadialListItem = ({
   index,
   count,
   arc = 360,
-  offsetDegrees = -90,
+  offsetDegrees = 0,
   itemStyles = {},
   selected = false,
   collapsed = false
 }) => {
-  const rotation = collapsed ? NORTH : (offsetDegrees + NORTH + (arc / count * index))
+  const spokeTheta = arc / count
+  const weightedNorth = NORTH + offsetDegrees + (arc / -2) + (spokeTheta / 2)
+  const rotation = collapsed ? NORTH : weightedNorth + (spokeTheta * index)
   const listItemStyles = css(
     styles.list,
     (selected && styles.selected),
     itemStyles,
-    { transform: `rotate(${rotation}deg)` }
+    { width: radius, transform: `rotate(${rotation}deg)` }
   )
   const labelStyles = css(styles.label, { transform: `rotate(${rotation * -1}deg) translate(${xOffset(radius, rotation)}, ${yOffset(radius, rotation)})` })
 
