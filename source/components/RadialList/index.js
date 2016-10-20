@@ -8,15 +8,16 @@ const RadialList = ({
   items,
   selectedItemIndex,
   diameter = 240, // By default renders around circle with a diameter of 240px
-  offsetDegrees = -90, // Positions the first item at 12 o'clock
+  offsetDegrees = 0, // Positions the first item at 12 o'clock
   arc = 360,
   listStyles = {},
   itemStyles = {},
   collapsed = false
 }) => {
+  const radius = collapsed ? 20 : diameter / 2
   const liStyles = css(styles.list, {
-    width: diameter,
-    height: diameter
+    width: radius * 2,
+    height: radius * 2
   }, listStyles)
 
   return (
@@ -24,7 +25,7 @@ const RadialList = ({
       {items.map((item, i) => (
         <RadialListItem
           key={i}
-          radius={diameter / 2}
+          radius={radius}
           item={item}
           index={i}
           count={items.length}
