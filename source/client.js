@@ -19,4 +19,4 @@ const items = [
   <div>10</div>
 ]
 
-render(<RadialList items={items} offsetDegrees={196.5} />, mount)
+render(<RadialList items={items} diameter={280} />, mount)
