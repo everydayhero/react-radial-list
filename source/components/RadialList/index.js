@@ -43,7 +43,7 @@ const RadialList = ({
 RadialList.propTypes = {
   items: React.PropTypes.arrayOf(React.PropTypes.node).isRequired,
   selectedItemIndex: React.PropTypes.number,
-  diameter: React.PropTypes.oneOf([
+  diameter: React.PropTypes.oneOfType([
     React.PropTypes.number,
     React.PropTypes.string
   ]),
