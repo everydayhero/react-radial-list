@@ -1,4 +1,4 @@
-import cxs from 'cxs'
+import cxs from 'cxsync'
 import { shallow } from 'enzyme'
 import escapeStringRegexp from 'escape-string-regexp'
 
